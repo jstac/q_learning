@@ -5,10 +5,18 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{Tsi94}
+\begin{thebibliography}{Wat89}
 
 \bibitem[Tsi94]{tsitsiklis1994asynchronous}
 John~N Tsitsiklis, \emph{Asynchronous stochastic approximation and q-learning},
   Machine learning \textbf{16} (1994), no.~3, 185--202.
+
+\bibitem[Wat89]{watkins1989learning}
+Christopher~John Watkins, \emph{Learning from delayed rewards}, Tech. report,
+  King's College, Cambridge United Kingdom, 1989.
+
+\bibitem[WD92]{watkins1992q}
+Christopher~JCH Watkins and Peter Dayan, \emph{Q-learning}, Machine learning
+  \textbf{8} (1992), no.~3, 279--292.
 
 \end{thebibliography}

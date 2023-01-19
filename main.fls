@@ -1754,6 +1754,12 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmsso10.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf
 OUTPUT main.nav
 OUTPUT main.toc
 OUTPUT main.snm

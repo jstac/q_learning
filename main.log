@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2022.10.11)  19 JAN 2023 09:58
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2022.8.23)  19 JAN 2023 13:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1030,39 +1030,39 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [1
 
 ]
-LaTeX Font Info:    Trying to load font information for LS1+stixscr on input line 268.
+LaTeX Font Info:    Trying to load font information for LS1+stixscr on input line 271.
  (/usr/share/texlive/texmf-dist/tex/latex/stix/ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS2+stixex on input line 268.
+LaTeX Font Info:    Trying to load font information for LS2+stixex on input line 271.
  (/usr/share/texlive/texmf-dist/tex/latex/stix/ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 268.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 271.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 268.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 271.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input line 268.
+LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input line 271.
  (/usr/share/texlive/texmf-dist/tex/latex/stix/ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS1+stixbb on input line 268.
+LaTeX Font Info:    Trying to load font information for LS1+stixbb on input line 271.
  (/usr/share/texlive/texmf-dist/tex/latex/stix/ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS2+stixcal on input line 268.
+LaTeX Font Info:    Trying to load font information for LS2+stixcal on input line 271.
  (/usr/share/texlive/texmf-dist/tex/latex/stix/ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS1+stixsf on input line 268.
+LaTeX Font Info:    Trying to load font information for LS1+stixsf on input line 271.
  (/usr/share/texlive/texmf-dist/tex/latex/stix/ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS2+stixtt on input line 268.
+LaTeX Font Info:    Trying to load font information for LS2+stixtt on input line 271.
  (/usr/share/texlive/texmf-dist/tex/latex/stix/ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 ) [2
@@ -1073,13 +1073,13 @@ File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 ] [5
 
+] [6
+
 ]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 365.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 422.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [6
-
-] [7
+) [7
 
 ] [8
 
@@ -1091,6 +1091,18 @@ File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 
 ] [12
 
+] [13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
+] [18
+
 ] (./main.bbl
 File: beamericonarticle.pdf Graphic file (type pdf)
 <use beamericonarticle.pdf>
@@ -1098,7 +1110,11 @@ File: beamericonarticle.pdf Graphic file (type pdf)
 <use beamericonarticle.pdf>
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 11.
-) [13
+File: beamericonarticle.pdf Graphic file (type pdf)
+<use beamericonarticle.pdf>
+File: beamericonarticle.pdf Graphic file (type pdf)
+<use beamericonarticle.pdf>
+) [19
 
 ]
 \tf@nav=\write8
@@ -1115,12 +1131,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34257 strings out of 476191
- 691515 string characters out of 5812071
- 968900 words of memory out of 5000000
- 54303 multiletter control sequences out of 15000+600000
+ 34273 strings out of 476191
+ 691703 string characters out of 5812072
+ 970216 words of memory out of 5000000
+ 54319 multiletter control sequences out of 15000+600000
  513094 words of font info for 86 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,15n,122p,393b,636s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (13 pages).
+Output written on main.pdf (19 pages).

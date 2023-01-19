@@ -260,8 +260,11 @@
     
     \begin{itemize}
         \item Q-factors
+            \vspace{0.5em}
         \item Fixed point iteration
+            \vspace{0.5em}
         \item Stochastic approximation
+            \vspace{0.5em}
         \item Q-learning as stochastic approximation
     \end{itemize}
 
@@ -280,39 +283,41 @@
         \right\}
     \end{equation*}
 
-    The corresponding Q-factor is the right-hand side
+    \vspace{0.5em}
+    \vspace{0.5em}
+    The corresponding \navy{Q-factor} is the right-hand side
     %
     \begin{equation*}
-        Q^*(x,a) = r(x,a) + \beta \sum_{x'} v^*(x') P(x,a,x')
+        q^*(x,a) = r(x,a) + \beta \sum_{x'} v^*(x') P(x,a,x')
     \end{equation*}
 
     Hence
     %
     \begin{equation*}
-        v^*(x)  = \max_{a \in \Gamma(x)} Q^*(x,a)
+        v^*(x)  = \max_{a \in \Gamma(x)} q^*(x,a)
     \end{equation*}
 
 \end{frame}
 
+
+
 \begin{frame}
     
-    Therefore
+    Combining the last two equations gives
     %
     \begin{equation*}
-        \beta \sum_{x'} v^*(x') P(x,a,x') 
-        = \beta \sum_{x'} \max_{a' \in \Gamma(x')} Q^*(x',a')
+        q^*(x,a) 
+        = r(x, a) + \beta \sum_{x'} \max_{a' \in \Gamma(x')} q^*(x',a')
+            P(x,a,x')
     \end{equation*}
 
-    Hence
+    \vspace{0.5em}
+    \vspace{0.5em}
+    \vspace{0.5em}
+    We can use this to solve for $q^*$ and the obtain $v^*$ via
     %
     \begin{equation*}
-        Q^*(x,a) = r(x, a) + \beta \sum_{x'} \max_{a' \in \Gamma(x')} Q^*(x',a')
-    \end{equation*}
-
-    We can use this to solve for $Q^*$ and the obtain $v^*$ via
-    %
-    \begin{equation*}
-        v^*(x)  = \max_{a \in \Gamma(x)} Q^*(x,a)
+        v^*(x)  = \max_{a \in \Gamma(x)} q^*(x,a)
     \end{equation*}
     
 
@@ -323,16 +328,64 @@
     To repeat,
     %
     \begin{equation*}
-        Q^*(x,a) = r(x, a) + \beta \sum_{x'} \max_{a' \in \Gamma(x')} Q^*(x',a')
+        q^*(x,a) 
+        = r(x, a) 
+            + \beta \sum_{x'} \max_{a' \in \Gamma(x')} q^*(x',a')P(x,a,x')
     \end{equation*}
 
-    Hence $Q^*$ is the fixed point of
+    Hence $q^*$ is the fixed point of
     %
     \begin{equation*}
-        (S Q)(x,a)
-        =  r(x, a) + \beta \sum_{x'} \max_{a' \in \Gamma(x')} Q(x',a')
+        (S q)(x,a)
+        =  r(x, a) 
+            + \beta \sum_{x'} \max_{a' \in \Gamma(x')} q(x',a')P(x,a,x')
     \end{equation*}
+
+
+    Remarks
+    %
+    \begin{itemize}
+        \item unlike the Bellman equation for $v^*$, the expectation is
+            \underline{outside} the max
+    \vspace{0.5em}
+        \item this helps with stochastic approximation
+    \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
     
+    Note that
+    %
+    \begin{align*}
+        |(S f)(x,a) & - (S g)(x,a)|
+        \\
+        & \leq \beta
+        \left|
+            \sum_{x'} \max_{a' \in \Gamma(x')} f(x',a')
+            - \sum_{x'} \max_{a' \in \Gamma(x')} g(x',a')
+        \right| P(x,a,x')
+        \\
+        & = \beta
+            \sum_{x'}
+            \max_{a' \in \Gamma(x')}
+        \left|
+              f(x',a')
+            -  g(x',a')
+        \right| P(x,a,x')
+    \end{align*}
+
+    \begin{equation*}
+        \fore
+        |(S f)(x,a) - (S g)(x,a)|
+        \leq \beta \| f - g\|_\infty
+    \end{equation*}
+
+    \begin{equation*}
+        \fore
+        \|S f - S g\| \leq \beta \| f - g\|_\infty
+    \end{equation*}
 
 \end{frame}
 
@@ -342,20 +395,24 @@
     Let 
     %
     \begin{itemize}
-        \item $T \colon U \to U$ be a contraction map of modulus $\beta$
-        \item $U \subset \RR^n$
+        \item $T \colon \Theta \to \Theta$ be a contraction map of modulus $\beta$
+        \item $\Theta$ be a closed subset of $\RR^n$
     \end{itemize}
 
-    We know that $T^k u \to \bar u$ as $k \to \infty$ where $\bar u$ is the
+    \vspace{0.5em}
+    \vspace{0.5em}
+    We know that $T^k \theta \to \bar \theta$ as $k \to \infty$ where $\bar
+    \theta$ is the
     unique fixed point
 
+    \vspace{0.5em}
     Alternatively, we can iterate on the damped sequence
     %
     \begin{align*}
-        u_{k+1} 
-        & = (1-\alpha) u_k + \alpha T u_k
+        \theta_{k+1} 
+        & = (1-\alpha) \theta_k + \alpha T \theta_k
         \\
-        & =  u_k + \alpha (T u_k - u_k)
+        & =  \theta_k + \alpha (T \theta_k - \theta_k)
     \end{align*}
 
     \begin{itemize}
@@ -369,23 +426,23 @@
     To see that the damped sequence converges, let
     %
     \begin{equation*}
-        Fu = u + \alpha (Tu - u)
+        F\theta = \theta + \alpha (T\theta - \theta)
     \end{equation*}
 
     Then
     %
     \begin{equation*}
-        F \bar u 
-        = \bar u + \alpha (T \bar u - \bar u)
-        = \bar u
+        F \bar \theta 
+        = \bar \theta + \alpha (T \bar \theta - \bar \theta)
+        = \bar \theta
     \end{equation*}
 
     and
 
     \begin{equation*}
-        \| Fu - Fv\|
-        \leq (1-\alpha)\|u - v\| + \alpha \| Tu - Tv\|
-        \leq (1-\alpha + \alpha \beta)\| u - v\|
+        \| F\theta - F\theta'\|
+        \leq (1-\alpha)\|\theta - \theta'\| + \alpha \| T\theta - T\theta'\|
+        \leq (1-\alpha + \alpha \beta)\| \theta - \theta'\|
     \end{equation*}
 
     Note 
@@ -398,9 +455,9 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Stochastic Approximation (Simplified)}
+    \frametitle{Stochastic Approximation}
 
-    $T$ is a map with fixed point $\bar \theta = T \bar \theta$
+    Suppose $T$ is a map with fixed point $\bar \theta = T \bar \theta$
 
     We can only evaluate $T$ with noise:
     %
@@ -409,8 +466,8 @@
     \end{center}
 
     \begin{itemize}
-        \item $(W_k)$ is a random sequence with common distribution $\phi$
-        \item We cannot observe $W_k$, only $Y_k = T \theta + W_k$
+        \item $(W_k)$ is a random (vector-valued) sequence 
+        \item We cannot observe $W_k$, only $T \theta + W_k$
     \end{itemize}
 
     Robbins--Monro algorithm to compute the fixed point $\bar \theta$:
@@ -432,17 +489,25 @@
     By our earlier analysis, $\theta_k \to \bar \theta$ if $W_k \equiv 0$ and
     $\alpha_k \equiv \alpha$
 
+    \vspace{0.5em}
     More generally, \cite{tsitsiklis1994asynchronous} proves that if:
     %
     \begin{itemize}
         \item $T$ is an order-preserving contraction map with fixed
             point $\bar \theta$
+            \vspace{0.5em}
         \item $\EE [W_{k+1} \given \fF_k] = 0$ for all $k \geq 0$
+            \vspace{0.5em}
         \item $\sum_{k \geq 0} \alpha_k = \infty$ and $\sum_{k \geq 0} \alpha_k^2 < \infty$
+            \vspace{0.5em}
         \item some other technical assumptions,
     \end{itemize}
     %
-    then $\theta_k \to \bar \theta$ with probability one
+    then 
+    %
+    \begin{center}
+        $\theta_k \to \bar \theta$ with probability one
+    \end{center}
 
 \end{frame}
 
@@ -450,66 +515,94 @@
 \begin{frame}
     \frametitle{Q-Learning}
 
-    The Q-learning algorithm proposes to learn the Q-factor of an MDP
+    The Q-learning algorithm \cite{watkins1989learning} proposes to learn the Q-factor of an MDP
     via
     %
     \begin{equation*}
-        Q_{k+1}(x,a) 
-        = Q_k(x,a) + \alpha_k 
+        q_{k+1}(x,a) 
+        = q_k(x,a) + \alpha_k 
         \left[
-            r(x,a) + \beta \max_{a' \in \Gamma(X')} Q_k(X', a')
-            - Q_k(x,a)
+            r(x,a) + \beta \max_{a' \in \Gamma(X')} q_k(X', a')
+            - q_k(x,a)
         \right]
     \end{equation*}
     %
     where $X' \sim P(x, a, \cdot)$
 
+            \vspace{0.5em}
+            \vspace{0.5em}
+    {\bf Thm.} Under some assumptions, 
+    %
+    \begin{equation*}
+        \PP
+        \left\{
+            \lim_{k \to \infty}
+            q_k = q^*
+        \right\} = 1
+    \end{equation*}
+
+    Proved by \cite{tsitsiklis1994asynchronous}, \cite{watkins1992q}
+
+\end{frame}
+
+\begin{frame}
+
+    We sketch the proof of \cite{tsitsiklis1994asynchronous}
+    
+            \vspace{0.5em}
     Let
     %
     \begin{equation*}
         W_k 
-        := \beta \max_{a' \in \Gamma(X')} Q_k(X', a') 
-        - \beta \, \EE \max_{a' \in \Gamma(X')} Q_k(X', a')
+        := \beta \max_{a' \in \Gamma(X')} q_k(X', a') 
+        - \beta \, \EE \max_{a' \in \Gamma(X')} q_k(X', a')
     \end{equation*}
     %
     and recall that
     %
     \begin{equation*}
-        (S Q)(x,a)
-        =  r(x, a) + \beta \,\EE \max_{a' \in \Gamma(X')} Q(X',a')
+        (S q)(x,a)
+        =  r(x, a) + \beta \,\EE \max_{a' \in \Gamma(X')} q(X',a')
+    \end{equation*}
+
+            \vspace{0.5em}
+            \vspace{0.5em}
+    Alternatively,
+    %
+    %
+    \begin{equation*}
+        (S q)(x,a)
+        =  r(x, a) + \beta \max_{a' \in \Gamma(X')} q(X',a') - W_k
     \end{equation*}
 
 \end{frame}
 
 \begin{frame}
 
-    We have
+    In summary,
     % 
     \begin{equation*}
-        Q_{k+1} 
-        = Q_k + \alpha_k 
+        q_{k+1} 
+        = q_k + \alpha_k 
         \left[
-            r + \beta \max_{a' \in \Gamma(X')} Q_k(X', a')
-            - Q_k
+            r + \beta \max_{a' \in \Gamma(X')} q_k(X', a')
+            - q_k
         \right]
     \end{equation*}
     %
     and
     %
-    \begin{align*}
-        r + \beta & \max_{a' \in \Gamma(X')} Q_k(X', a')
-        \\
-          & = S Q_k - \beta \, \EE \max_{a' \in \Gamma(X')} Q(X',a') + \beta \max_{a' \in \Gamma(X')} Q_k(X', a')
-        \\
-          & = S Q_k + W_k
-    \end{align*}
+    \begin{equation*}
+          S q_k + W_k
+        = r + \beta \max_{a' \in \Gamma(X')} q_k(X', a')
+    \end{equation*}
 
     \begin{equation*}
         \fore
-        Q_{k+1} 
-        = Q_k + \alpha_k 
+        q_{k+1} 
+        = q_k + \alpha_k 
         \left[
-            S Q_k + W_k - Q_k
+            S q_k + W_k - q_k
         \right]
     \end{equation*}
 
@@ -520,10 +613,10 @@
     To repeat,
     %
     \begin{equation*}
-        Q_{k+1} 
-        = Q_k + \alpha_k 
+        q_{k+1} 
+        = q_k + \alpha_k 
         \left[
-            S Q_k + W_k - Q_k
+            S q_k + W_k - q_k
         \right]
     \end{equation*}
     %
@@ -533,17 +626,143 @@
         \EE W_k 
         = \EE 
         \left[ 
-            \beta \max_{a' \in \Gamma(X')} Q_k(X', a') 
-            - \beta \, \EE \max_{a' \in \Gamma(X')} Q_k(X', a')
+            \beta \max_{a' \in \Gamma(X')} q_k(X', a') 
+            - \beta \, \EE \max_{a' \in \Gamma(X')} q_k(X', a')
         \right] = 0
     \end{equation*}
 
     This is the Robbins--Monro algorithm applied to computing the fixed point
     of $S$
 
-    The fixed point of $S$ is the Q-factor $Q^*$
+    \begin{itemize}
+        \item The fixed point of $S$ is the Q-factor $q^*$
+    \end{itemize}
+            \vspace{0.5em}
+            \vspace{0.5em}
 
-    Hence, under certain assumptions, $Q_k \to Q^*$
+    Hence, under certain assumptions, $q_k \to q^*$ with probability one
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Online Q-Learning} 
+
+    We analyzed the Q-learning routine
+    %
+    \begin{equation*}
+        q_{k+1}(x,a) 
+        = q_k(x,a) + \alpha_k 
+        \left[
+            r(x,a) + \beta \max_{a' \in \Gamma(X')} q_k(X', a')
+            - q_k(x,a)
+        \right]
+    \end{equation*}
+    %
+    where $X' \sim P(x, a, \cdot)$
+
+    This is an example of \navy{offline} learning
+
+    \begin{itemize}
+        \item update $q_{k+1}$ at every $(x,a)$
+    \end{itemize}
+
+    An alternative is \navy{online} learning
+
+    \begin{itemize}
+        \item update along a sequence
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    
+    Let $(X_t, A_t)$ be a state-action sequence
+
+    \begin{itemize}
+        \item $X_{t+1} \sim P(X_t, A_t, \cdot)$ for all $t \geq 0$
+        \vspace{0.5em}
+        \item $R_t := r(X_t, A_t)$ for all $t \geq 0$
+    \end{itemize}
+    %
+
+    \vspace{0.5em}
+    \vspace{0.5em}
+
+    Update via
+    %
+    \begin{multline*}
+        q_{t+1}(X_t, A_t) =
+        \\
+        q_t(X_t, A_t) + \alpha_t 
+        \left[
+            R_t + \beta \max_{a' \in \Gamma(X_{t+1})} q_t(X_{t+1}, a')
+            - q_t(X_t, A_t)
+        \right]
+    \end{multline*}
+
+    \begin{itemize}
+        \item Can learn online without knowing $r$ or $P$
+    \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Q-Learning for Optimal Stopping}
+
+    Consider an optimal stopping problem with Bellman equation
+    %
+    \begin{equation*}
+        v^*(x) = \max_a
+        \left\{
+            a e(x) + (1-a)
+            \left[ 
+                c(x) + \beta \sum_{x'} v^*(x')P(x,x')
+            \right]
+        \right\}
+    \end{equation*}
+
+    \begin{itemize}
+        \item $a \in \{0, 1\}$ stands for ``reject'', ``accept''
+    \end{itemize}
+
+    Let
+    %
+    \begin{equation*}
+        q^*(x,a) =
+            a e(x) + (1-a)
+            \left[ 
+                c(x) + \beta \sum_{x'} v^*(x')P(x,x')
+            \right]
+    \end{equation*}
+
+\end{frame}
+
+
+\begin{frame}
+    
+    Now rearrange the Bellman equation and elminate $v^*$ to get
+    %
+    \begin{equation*}
+        q^*(x,a) =
+            a e(x) + (1-a)
+            \left[ 
+                c(x) + \beta \sum_{x'} \max_{a'}  q^*(x', a')P(x,x')
+            \right]
+    \end{equation*}
+
+    Alternatively, $q^* = S q^*$ where
+
+    %
+    \begin{equation*}
+        (Sq)(x,a) =
+            a e(x) + (1-a)
+            \left[ 
+                c(x) + \beta \sum_{x'} \max_{a'}  q(x', a')P(x,x')
+            \right]
+    \end{equation*}
+
+    Finally, apply Q-learning with this version of $S$
 
 \end{frame}
 

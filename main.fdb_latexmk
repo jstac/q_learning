@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex main"] 1674082390 "main.aux" "main.bbl" "main" 1674082728
+["bibtex main"] 1674095950 "main.aux" "main.bbl" "main" 1674096576
   "/usr/share/texlive/texmf-dist/bibtex/bst/amscls/amsalpha.bst" 1513722769 28675 71ba1b1ee8387ac88670b0ea0eb2399a ""
-  "main.aux" 1674082728 3275 56c026e581ede86fcf409eaeef5d26d8 "pdflatex"
-  "main.bib" 1674076350 252 f1e4b6fd015d540b79abbd2e78e1fb60 ""
+  "main.aux" 1674096576 4577 e0579c399c91c001cb174d68840c6b58 "pdflatex"
+  "main.bib" 1674095393 657 d509da1717f7d008aa200319e554f4a2 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1674082727 "main.tex" "main.pdf" "main" 1674082728
-  "/dev/null" 1673566748 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "/etc/texmf/web2c/texmf.cnf" 1665443401 475 c0e671620eb5563b2130f56340a5fde8 ""
+["pdflatex"] 1674096575 "main.tex" "main.pdf" "main" 1674096576
+  "/dev/null" 1673825345 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/etc/texmf/web2c/texmf.cnf" 1661219334 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -266,12 +266,12 @@
   "/usr/share/texmf/tex/latex/lm/t1lmss.fd" 1256929440 1639 ba1c66ef577aa5cadc2c0fdc691a26ee ""
   "/usr/share/texmf/tex/latex/lm/t1lmtt.fd" 1256929440 2681 354015af3b61e7be30009f084986375a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1665443448 5133730 0ed4705f6194a7c944148d52da6dadb3 ""
-  "main.aux" 1674082728 3275 56c026e581ede86fcf409eaeef5d26d8 "pdflatex"
-  "main.bbl" 1674082390 545 9b76e156ae09c944eccc907a3a2b1e68 "bibtex main"
-  "main.nav" 1674082728 1388 37fb167c90003b6656a249083ce3750a "pdflatex"
-  "main.out" 1674082727 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1674082726 12889 193c6c777f8431ef39126e597091c92d ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1661219498 5132279 1aef98c5df80f91d3e29ed5691e95c65 ""
+  "main.aux" 1674096576 4577 e0579c399c91c001cb174d68840c6b58 "pdflatex"
+  "main.bbl" 1674095950 856 08d73384cf7149d786752b9f78f3d983 "bibtex main"
+  "main.nav" 1674096576 1946 cc1d57bc897673374b837eab8153475a "pdflatex"
+  "main.out" 1674096575 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1674096574 17577 8a70d16bd894b3ad698090ca7bb7cce6 ""
   (generated)
   "main.aux"
   "main.log"
